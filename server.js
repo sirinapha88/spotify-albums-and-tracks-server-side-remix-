@@ -10,7 +10,6 @@ app.use(express.static(__dirname + '/assets/'));
 
 app.use('/', spotifyRoutes);
 
-var server = app.listen(3000, function () {
-  var port = server.address().port;
-  console.log('Server up and listening on', port);
-});
+var PORT = process.env.PORT || 3000;
+
+app.listen(PORT, function() {console.log("Listening on localhost:", PORT)});
